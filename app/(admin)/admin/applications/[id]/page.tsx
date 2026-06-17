@@ -102,9 +102,8 @@ export default function AdminApplicationDetailPage() {
   const education: any[] = app.education ?? [];
   const nextOfKin = app.nextOfKin ?? null;
 
-  // Derive display name: prefer parsed personal, fall back to flat applicantName
-  const firstName = personal?.firstName ?? app.applicantName?.split(" ")[0] ?? "";
-  const lastName = personal?.lastName ?? app.applicantName?.split(" ").slice(1).join(" ") ?? "";
+  const firstName = personal?.firstName ?? "";
+  const lastName = personal?.lastName ?? "";
 
   const chip = appStatusChip(app.status);
   const canDecide = ["UNDER_REVIEW", "DOCUMENTS_SUBMITTED", "UnderReview", "DocsVerified"].includes(app.status);
