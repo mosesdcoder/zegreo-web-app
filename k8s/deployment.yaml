@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zegreo-web
+  namespace: zegreo
+  labels:
+    app: zegreo-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zegreo-web
+  template:
+    metadata:
+      labels:
+        app: zegreo-web
+    spec:
+      imagePullSecrets:
+        - name: do-registry-secret
+      containers:
+        - name: zegreo-web
+          image: registry.digitalocean.com/zogreolabs/zegreo-web:web-prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "3000"
+            # Runtime env vars — add secrets here as needed, e.g.:
+            # - name: NEXT_PUBLIC_API_URL
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: zegreo-web-secrets
+            #       key: NEXT_PUBLIC_API_URL
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 20
+            periodSeconds: 30

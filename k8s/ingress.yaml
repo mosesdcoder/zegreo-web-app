@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zegreo-web
+  namespace: zegreo
+  annotations:
+    # cert-manager issues the TLS certificate automatically
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - zogreo.online
+      secretName: zegreo-web-tls
+  rules:
+    - host: zogreo.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: zegreo-web
+                port:
+                  number: 80
