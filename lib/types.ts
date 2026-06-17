@@ -243,7 +243,7 @@ export interface AuditLogEntry {
   staffId: string;
   staffName: string;
   details?: Record<string, unknown>;
-  createdAt: string;
+  createdAt: string; 
 }
 
 export interface FeeType {
