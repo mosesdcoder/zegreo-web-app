@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { StatusChip } from "@/components/brand/status-chip";
 import { toast } from "sonner";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { formatKes, formatDate } from "@/lib/format";
 import type { Payment, PaymentMethod } from "@/lib/types";
@@ -21,6 +21,14 @@ import { CheckCircle, Clock, RefreshCw, FlaskConical } from "lucide-react";
 const IS_SIMULATE = process.env.NEXT_PUBLIC_PAYMENT_SIMULATE === "true";
 
 export default function PaymentsPage() {
+  return (
+    <Suspense fallback={<div className="p-4 md:p-6 md:ml-56"><Skeleton className="h-8 w-40" /></div>}>
+      <PaymentsContent />
+    </Suspense>
+  );
+}
+
+function PaymentsContent() {
   const qc = useQueryClient();
   const searchParams = useSearchParams();
   const preselectedInvoiceId = searchParams.get("invoiceId");
