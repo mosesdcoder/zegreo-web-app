@@ -98,10 +98,9 @@ export default function AdminApplicationDetailPage() {
 
   if (!app) return <Banner variant="warning">Application not found.</Banner>;
 
-  // API returns flat fields + raw JSON strings
-  const personal = (() => { try { return app.personalJson ? JSON.parse(app.personalJson) : null; } catch { return null; } })();
-  const education: any[] = (() => { try { return app.educationHistoryJson ? JSON.parse(app.educationHistoryJson) : []; } catch { return []; } })();
-  const nextOfKin = (() => { try { return app.nextOfKinJson ? JSON.parse(app.nextOfKinJson) : null; } catch { return null; } })();
+  const personal = app.personal ?? null;
+  const education: any[] = app.education ?? [];
+  const nextOfKin = app.nextOfKin ?? null;
 
   // Derive display name: prefer parsed personal, fall back to flat applicantName
   const firstName = personal?.firstName ?? app.applicantName?.split(" ")[0] ?? "";
