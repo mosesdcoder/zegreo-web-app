@@ -60,11 +60,12 @@ export function HeroSlideshow({
             alt={slide.alt}
             fill
             priority={i === 0}
+            quality={90}
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* Navy overlay so text stays readable */}
-          <div className="absolute inset-0 bg-navy/65" />
+          {/* Gradient overlay — darker at bottom where text sits, lighter at top to show the image */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-navy/45 to-navy/70" />
         </div>
       ))}
 

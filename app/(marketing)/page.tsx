@@ -10,7 +10,9 @@ const CAMPUS_SLIDES = [
   { src: "/campus/campus-1.jpeg", alt: "Zogreo campus building" },
   { src: "/campus/campus-2.jpeg", alt: "Zogreo campus front view" },
   { src: "/campus/campus-3.jpeg", alt: "Zogreo campus aerial view" },
-  { src: "/campus/campus-4.jpeg", alt: "Zogreo campus tower" },
+  { src: "/campus/campus-5.png",  alt: "Zogreo campus grounds" },
+  { src: "/campus/campus-6.jpeg", alt: "Zogreo campus exterior" },
+  { src: "/campus/campus-7.jpeg", alt: "Zogreo campus tower view" },
 ];
 
 export const metadata: Metadata = {
