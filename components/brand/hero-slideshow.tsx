@@ -34,13 +34,15 @@ export function HeroSlideshow({
 
   useEffect(() => {
     if (paused || slides.length <= 1) return;
-    const id = setInterval(next, interval);
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % slides.length);
+    }, interval);
     return () => clearInterval(id);
-  }, [paused, interval, next, slides.length]);
+  }, [paused, interval, slides.length]);
 
   return (
     <div
-      className={cn("relative overflow-hidden", className)}
+      className={cn("relative w-full overflow-hidden", className)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
