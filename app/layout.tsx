@@ -19,11 +19,11 @@ const hanken = Hanken_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Zogreo | Raising Skilled Minds. Building Better Futures.",
-    template: "%s | Zogreo",
+    default: "Zogreo Bible & Technical Training Institute | Raising Skilled Minds. Building Better Futures.",
+    template: "%s | Zogreo Bible & Technical Training Institute",
   },
   description:
-    "Zogreo offers accredited certificate, diploma, and advanced diploma programs in ICT, business, and professional skills in Nairobi, Kenya.",
+    "Zogreo Bible & Technical Training Institute is a faith-based vocational and academic institution equipping young people with practical skills, strong values, and the confidence to excel in their careers and communities.",
 };
 
 export default function RootLayout({

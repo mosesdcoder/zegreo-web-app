@@ -5,7 +5,8 @@ export function MarketingFooter() {
     <footer className="bg-navy-deep text-gold-soft/70 text-sm">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <p className="font-display font-semibold text-white text-base mb-3">Zogreo</p>
+          <p className="font-display font-semibold text-white text-base mb-1">Zogreo</p>
+          <p className="text-xs text-gold-soft/50 mb-3">Bible &amp; Technical Training Institute</p>
           <p className="text-xs leading-relaxed">Raising Skilled Minds.<br />Building Better Futures.</p>
         </div>
         <div>
@@ -32,7 +33,7 @@ export function MarketingFooter() {
         </div>
       </div>
       <div className="border-t border-navy/50 px-4 py-4 text-center text-xs">
-        © {new Date().getFullYear()} Zogreo. All rights reserved.
+        © {new Date().getFullYear()} Zogreo Bible &amp; Technical Training Institute. All rights reserved.
       </div>
     </footer>
   );

@@ -5,8 +5,11 @@ export function MarketingHeader() {
   return (
     <header className="sticky top-0 z-40 bg-navy/95 backdrop-blur-sm border-b border-navy-deep">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="font-display font-semibold text-xl text-white">
-          Zogreo
+        <Link href="/" className="flex flex-col leading-tight">
+          <span className="font-display font-semibold text-lg text-white">Zogreo</span>
+          <span className="text-[10px] text-gold-soft/70 tracking-wide hidden sm:block">
+            Bible &amp; Technical Training Institute
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-gold-soft">
