@@ -70,7 +70,7 @@ export function HeroSlideshow({
       ))}
 
       {/* Content slot */}
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 w-full flex justify-center">{children}</div>
 
       {/* Prev / Next — only when more than one slide */}
       {slides.length > 1 && (

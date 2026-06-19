@@ -43,12 +43,13 @@ export default function HomePage() {
       <HeroSlideshow slides={CAMPUS_SLIDES} interval={5000} className="min-h-[520px] md:min-h-[680px] flex items-center">
         <section className="text-white px-6 py-20 md:py-36 w-full">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-block bg-gold/20 text-gold-soft text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-              Nairobi, Kenya
-            </span>
+            
             <h1 className="text-3xl md:text-5xl font-display font-semibold leading-tight mb-3">
               Zogreo Bible &amp; Technical Training Institute
             </h1>
+            <span className="inline-block bg-gold/20 text-gold-soft text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+              Nairobi, Kenya
+            </span>
             <p className="text-gold text-lg md:text-xl font-semibold mb-6 tracking-wide">
               Raising Skilled Minds. Building Better Futures.
             </p>
