@@ -67,7 +67,7 @@ export function sessionPayloadToUser(payload: SessionPayload): Partial<User> {
     id: payload.sub,
     email: payload[CLAIM_EMAIL] ?? "",
     phone: payload[CLAIM_PHONE] ?? "",
-    phoneVerified: payload.phoneVerified ?? false,
+    phoneVerified: payload.phoneVerified === true || (payload.phoneVerified as unknown) === "true",
     role,
     orgSlug: payload.org ?? "zogreo",
     firstName: firstName ?? "",
